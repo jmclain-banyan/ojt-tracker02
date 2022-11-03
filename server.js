@@ -8,8 +8,8 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const app = express();
 require('./backend/config/config')
-// const UserModel = require('./backend/models/tracker.loginModel')
-// const userRoutes = require('./backend/routes/tracker.loginRoutes')
+const UserModel = require('./backend/models/userModel')
+const userRoutes = require('./backend/routes/userRoutes')
 const helmet = require('helmet')
 const LocalStrategy = require('passport-local')
 const { ObjectID } = require("mongodb")
@@ -66,7 +66,7 @@ app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
 //   }
 // ));
 
-// app.use('/', userRoutes)
+app.use('/', userRoutes)
 
 const PORT = process.env.PORT || 8800;
 
