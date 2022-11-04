@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
-// import './Logout.css'
+import './Logout.css'
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ const Logout = () => {
   return (
     <div>
       <button className="nav-link" onClick={logoutHandler} href='#'>Logout</button>
+      <a className="nav-link" onClick={logoutHandler} href='#'>Logout</a>
     </div>
   )
 };
